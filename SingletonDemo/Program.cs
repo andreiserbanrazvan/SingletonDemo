@@ -16,6 +16,12 @@ namespace SingletonDemo
 
             Singleton fromStudent = Singleton.GetInstance;
             fromEmployee.PrintDetails("From Student");
+
+            Console.WriteLine("-------------------------------");
+
+            //Singleton.DerivedSingleton derivedObj = new Singleton.DerivedSingleton();
+            //derivedObj.PrintDetails("From Derived");
+
             Console.ReadLine();
         }
     }

@@ -8,8 +8,15 @@ namespace SingletonDemo
 {
     public sealed class Singleton
     {
+
         private static int counter = 0;
         public static Singleton instance = null;
+
+        private Singleton()
+        {
+            counter++;
+            Console.WriteLine("Counter Value " + counter.ToString());
+        }
 
         public static Singleton GetInstance
         {
@@ -21,15 +28,16 @@ namespace SingletonDemo
             }
         }
 
-        private Singleton()
-        {
-            counter++;
-            Console.WriteLine("Counter Value " + counter.ToString());
-        }
         public void PrintDetails(string message)
         {
             Console.WriteLine(message);
         }
+
+        ///Cannot derive from sealed class
+        //public class DerivedSingleton : Singleton
+        //{
+
+        //}
 
     }
 }
